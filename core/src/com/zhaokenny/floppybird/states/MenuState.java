@@ -1,0 +1,35 @@
+package com.zhaokenny.floppybird.states;
+
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.zhaokenny.floppybird.FloppyBird;
+
+public class MenuState extends State {
+    private Texture background;
+    private Texture playButton;
+
+
+    public MenuState(GameStateManager gsm){
+        super(gsm);
+        background = new Texture("bg.png");
+        playButton = new Texture("playBtn.png");
+    }
+
+    @Override
+    public void handleInput() {
+
+    }
+
+    @Override
+    public void update(float dt) {
+
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        sb.begin();
+        sb.draw(background, 0, 0, FloppyBird.WIDTH, FloppyBird.HEIGHT);
+        sb.draw(playButton, (FloppyBird.WIDTH / 2) - (playButton.getWidth() / 2), FloppyBird.HEIGHT / 2  );
+        sb.end();
+    }
+}
