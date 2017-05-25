@@ -3,14 +3,14 @@ package com.zhaokenny.floppybird.states;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.zhaokenny.floppybird.FloppyBird;
+import com.zhaokenny.floppybird.*;
 
 public class MenuState extends State {
     private Texture background;
     private Texture playButton;
 
 
-    public MenuState(GameStateManager gsm){
+    public MenuState(com.zhaokenny.floppybird.GameStateManager gsm){
         super(gsm);
         background = new Texture("bg.png");
         playButton = new Texture("playBtn.png");

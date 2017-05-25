@@ -1,6 +1,7 @@
-package com.zhaokenny.floppybird.states;
+package com.zhaokenny.floppybird;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.zhaokenny.floppybird.states.State;
 
 import java.util.Stack;
 
