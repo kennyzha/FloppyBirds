@@ -1,6 +1,7 @@
 package com.zhaokenny.floppybird.sprites;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 
 public class Bird {
@@ -10,11 +11,13 @@ public class Bird {
     private Texture bird;
     private Vector3 position;
     private Vector3 velocity;
+    private Rectangle bounds;
 
     public Bird(int x, int y){
         bird = new Texture("bird.png");
         position = new Vector3(x, y, 0);
         velocity = new Vector3(0, 0, 0);
+        bounds = new Rectangle(x, y, bird.getWidth(), bird.getHeight());
     }
 
     public void update(float dt){
@@ -29,6 +32,8 @@ public class Bird {
             position.y = 0;
         }
         velocity.scl(1 / dt);
+
+        bounds.setPosition(position.x, position.y);
     }
 
     public Texture getTexture() {
@@ -45,5 +50,11 @@ public class Bird {
 
     public void jump(){
         velocity.y = 250;
+    }
+
+    public Rectangle getBounds(){ return bounds; }
+
+    public void dispose(){
+        bird.dispose();
     }
 }
