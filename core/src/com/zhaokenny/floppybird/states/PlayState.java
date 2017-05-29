@@ -1,6 +1,7 @@
 package com.zhaokenny.floppybird.states;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -21,7 +22,7 @@ public class PlayState extends State {
     private Array<Tube> tubes;
     private Vector2 groundPos1;
     private Vector2 groundPos2;
-
+    private Music music;
     public PlayState(com.zhaokenny.floppybird.GameStateManager gsm){
         super(gsm);
         bird = new Bird(50, 300);
@@ -36,6 +37,10 @@ public class PlayState extends State {
         for(int i = 1 ; i <= TUBE_COUNT; i++){
             tubes.add(new Tube(i * (TUBE_SPACING + Tube.TUBE_WIDTH)));
         }
+        music = Gdx.audio.newMusic(Gdx.files.internal("braveworld.wav"));
+        music.setLooping(true);
+        music.setVolume(0.1f);
+        music.play();
     }
     @Override
     public void handleInput() {
@@ -89,6 +94,7 @@ public class PlayState extends State {
         bg.dispose();
         bird.dispose();
         ground.dispose();
+        music.dispose();
 
         for(Tube tube : tubes){
             tube.dispose();
