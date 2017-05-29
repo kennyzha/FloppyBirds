@@ -13,9 +13,9 @@ public class Tube {
     private Vector2 posBotTube;
 
     private Random random;
-    private static final int FLUCTUATION = 180;
+    private static final int FLUCTUATION = 150;
     private static final int TUBE_GAP = 100;
-    private static final int LOWEST_OPENING = 20;
+    private static final int LOWEST_OPENING = 50;
     public static final int TUBE_WIDTH = 52;
 
     private Rectangle topBounds;
@@ -64,7 +64,5 @@ public class Tube {
     public void dispose(){
         topTube.dispose();
         bottomTube.dispose();
-
-        System.out.println("Disposed tubes");
     }
 }

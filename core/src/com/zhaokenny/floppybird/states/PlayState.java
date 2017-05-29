@@ -41,6 +41,7 @@ public class PlayState extends State {
     public void handleInput() {
         if(Gdx.input.justTouched()){
             bird.jump();
+            bird.incrementAnimationFrame();
         }
     }
 
@@ -60,6 +61,10 @@ public class PlayState extends State {
                 gsm.set(new PlayState(gsm));
                 break;
             }
+        }
+
+        if(bird.getPosition().y <= ground.getHeight() + GROUND_Y_OFFSET){
+            gsm.set(new PlayState(gsm));
         }
     }
 
@@ -83,6 +88,7 @@ public class PlayState extends State {
     public void dispose() {
         bg.dispose();
         bird.dispose();
+        ground.dispose();
 
         for(Tube tube : tubes){
             tube.dispose();
