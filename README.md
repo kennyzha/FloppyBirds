@@ -1,3 +1,3 @@
 # FloppyBirds
 
-![Alt text](ingamepic.png?raw=true "Optional Title")
+![Alt text](ingamepic_small.png?raw=true "Game Play")
